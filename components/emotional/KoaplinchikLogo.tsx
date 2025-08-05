@@ -39,13 +39,11 @@ export default function KoaplinchikLogo({
   theme = "light",
   ariaLabel = "Koaplinchik Photography"
 }: KoaplinchikLogoProps) {
-  // Determine the image source based on theme
-  const imageSrc = theme === "light" 
-    ? "/images/brand/hearts-signature-light-dream.png" 
-    : "/images/brand/hearts-signature-dark-dream.png";
-  
-  // Calculate aspect ratio-preserving height if not specified
-  const imageHeight = height || (width * 0.33); // Assuming 3:1 aspect ratio
+  // Use single scalable SVG for both themes
+  const imageSrc = "/images/brand/koaplinchik-signature.svg";
+
+  // If height not supplied, let SVG define it automatically
+  const imageHeight = height ?? undefined;
   
   // Simple fade-in animation
   const fadeVariants: Variants = {
