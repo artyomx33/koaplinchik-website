@@ -2,23 +2,42 @@
   "name": "koaplinchik-website",
   "version": "0.1.0",
   "private": true,
+  "description": "Where memories become poetry",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "feelings:check": "node scripts/check-feelings.js",
+    "type-check": "tsc --noEmit",
+    "preview": "npm run build && npm run start",
+    "preflight": "npm run feelings:check && npm run lint && npm run type-check && npm run build",
+    "deploy:with-love": "npm run preflight && vercel --prod"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
+    "framer-motion": "^12.23.12",
+    "next": "15.4.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.5"
+    "react-intersection-observer": "^9.16.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@playwright/test": "^1.54.2",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "eslint": "^9.32.0",
+    "eslint-config-next": "^15.4.5",
+    "husky": "^9.1.7",
+    "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
+    "lint-staged": "^16.1.4",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
