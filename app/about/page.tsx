@@ -29,88 +29,103 @@ export default function AboutPage() {
         </div>
       </section>
       
-      {/* Coming Soon Section */}
-      <section className="w-full max-w-5xl px-6 py-20 mx-auto">
+      {/* Hearts Behind the Lens */}
+      <section className="w-full max-w-6xl px-6 py-24 mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
-          className="relative p-10 border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
         >
-          {/* Subtle background pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/20" />
-            <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-whisper)_1px,_transparent_1px)] bg-[size:20px_20px]"></div>
-          </div>
-          
-          <div className="relative text-center">
-            <HeartText
-              as="span"
-              size="sm"
-              className="inline-block mb-4 px-4 py-1 bg-black/5 dark:bg-white/5 rounded-full"
-            >
-              Our Journey Unfolds
-            </HeartText>
-            
-            <WhisperText 
-              as="h2" 
-              size="lg" 
-              className="mb-6"
-            >
-              We're crafting our story with the same care we give yours
-            </WhisperText>
-            
-            <StoryText 
-              className="max-w-2xl mx-auto mb-10 opacity-80"
-            >
-              Most people rush to tell their story, filling pages with words that don't breathe.
-              <strong className="font-medium block mt-2">
-                We're taking our time, because the best stories are felt, not just read.
-              </strong>
-            </StoryText>
-            
+          <HeartText
+            as="span"
+            size="sm"
+            className="inline-block mb-6 px-4 py-1 bg-black/5 dark:bg-white/5 rounded-full text-center"
+          >
+            Hearts Behind the Lens
+          </HeartText>
+
+          <WhisperText 
+            as="h2" 
+            size="lg" 
+            className="mb-10 text-center"
+          >
+            Meet Niki &amp; Artem
+          </WhisperText>
+
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            {/* Niki & Artem Photo 1 */}
             <motion.div
+              className="relative flex-1 aspect-[4/3] overflow-hidden rounded-lg shadow-lg"
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="w-24 h-1 bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent mx-auto my-10"
-            />
-            
-            <MemoryText
-              as="div"
-              size="md"
-              className="italic"
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
             >
-              "In a world of pixels, we choose poetry."
-            </MemoryText>
-            
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12">
-              <Link 
-                href="/what-we-capture" 
-                className="px-8 py-3 text-sm font-medium tracking-wide transition-colors border border-current rounded-full md:text-base hover:bg-black/5 dark:hover:bg-white/5"
-              >
-                Explore Our Work
-              </Link>
-              
-              <Link 
-                href="/connect" 
-                className="px-8 py-3 text-sm font-medium tracking-wide transition-colors rounded-full md:text-base hover:underline"
-              >
-                Begin a Conversation
-              </Link>
+              <Image
+                src="/images/placeholders/niki artem holding hands ocean.webp"
+                alt="Niki and Artem holding hands by the ocean – hearts-together-ocean-dream"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+
+            {/* Copy */}
+            <div className="flex-1">
+              <StoryText className="mb-6 opacity-90">
+                We are <strong>Niki</strong> &amp; <strong>Artem</strong>, the souls breathing life into Koaplinchik. 
+                Our journey began with a single click – not of the shutter, but of two hearts 
+                recognising the poetry in each other&rsquo;s gaze.
+              </StoryText>
+
+              <StoryText className="mb-6 opacity-90">
+                From windswept coasts to quiet kitchen mornings, we chase the fleeting seconds 
+                where love whispers its truest form. Our cameras are merely pens; light, our ink; 
+                your emotions, the story we are humbled to write.
+              </StoryText>
+
+              <MemoryText className="italic mb-8">
+                “Every photograph is a love letter we send back to the moment it was born.”
+              </MemoryText>
+
+              <div className="flex gap-4">
+                <Link 
+                  href="/what-we-capture" 
+                  className="px-8 py-3 text-sm font-medium tracking-wide transition-colors border border-current rounded-full md:text-base hover:bg-black/5 dark:hover:bg-white/5"
+                >
+                  Explore Our Work
+                </Link>
+                
+                <Link 
+                  href="/connect" 
+                  className="px-8 py-3 text-sm font-medium tracking-wide transition-colors rounded-full md:text-base hover:underline"
+                >
+                  Begin a Conversation
+                </Link>
+              </div>
             </div>
           </div>
+
+          {/* Second Photo */}
+          <motion.div
+            className="relative mt-20 w-full h-[60vh] overflow-hidden rounded-lg shadow-lg"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <Image
+              src="/images/placeholders/niki kissing artem.webp"
+              alt="Niki kissing Artem – souls-kissing-eternal-moment"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          </motion.div>
         </motion.div>
-        
-        {/* Subtle hint */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="mt-10 text-sm italic text-center"
-        >
-          Our full story arrives with the autumn leaves, 2025
-        </motion.p>
       </section>
     </main>
   );

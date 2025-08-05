@@ -227,7 +227,7 @@ export default function StoriesPage() {
           >
             <div className="w-12 h-12 relative rounded-full overflow-hidden mr-4">
               <Image
-                src="/images/placeholders/grateful-hearts-testimonial-memory.jpg"
+                src="/images/placeholders/grateful-hearts-testimonial-memory.webp"
                 alt="Portrait of Emma & James"
                 fill
                 sizes="48px"

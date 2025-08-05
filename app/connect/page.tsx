@@ -279,6 +279,66 @@ export default function ConnectPage() {
         </div>
       </section>
       
+      {/* Founders' Promise Section */}
+      <section className="w-full max-w-6xl px-6 py-24 mx-auto">
+        <motion.div
+          className="flex flex-col lg:flex-row gap-12 items-center"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+        >
+          {/* Photo */}
+          <motion.div
+            className="relative flex-1 overflow-hidden rounded-lg shadow-lg"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <Image
+              src="/images/placeholders/niki kissing artem.webp"
+              alt="Niki kissing Artem – promise-of-heart"
+              fill
+              sizes="(max-width:1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          </motion.div>
+
+          {/* Copy */}
+          <div className="flex-1">
+            <HeartText
+              as="span"
+              size="sm"
+              className="inline-block mb-4 px-4 py-1 bg-black/5 dark:bg-white/5 rounded-full"
+            >
+              Our Promise to You
+            </HeartText>
+
+            <WhisperText as="h2" size="md" className="mb-6">
+              More than Photographers—Your Storykeepers
+            </WhisperText>
+
+            <StoryText className="mb-6 opacity-90">
+              We, <strong>Niki</strong> &amp; <strong>Artem</strong>, believe every heartbeat carries
+              a narrative. When you invite us into your life, we don’t just arrive with
+              cameras; we arrive with open hearts ready to listen.
+            </StoryText>
+
+            <StoryText className="mb-6 opacity-90">
+              Our commitment is simple: to preserve the emotion that lives in the spaces
+              between words—the laughter, the gentle pauses, the breath before a whisper.
+              These are the moments that become forever.
+            </StoryText>
+
+            <MemoryText className="italic">
+              “Your memories deserve to feel as alive tomorrow as the day they are born.”
+            </MemoryText>
+          </div>
+        </motion.div>
+      </section>
+      
       {/* Emotional CTA */}
       <section className="w-full py-20 px-6 text-center">
         <div className="max-w-3xl mx-auto">

@@ -17,7 +17,7 @@ interface WhisperHeroProps {
 }
 
 export default function WhisperHero({
-  backgroundImage = "/images/heroes/whisper-of-golden-moment.jpg",
+  backgroundImage = "/images/heroes/whisper-of-golden-moment.webp",
   backgroundVideo = "/videos/memories-whisper.mp4",
   tagline = "Where memories become poetry",
   heading = "Every heartbeat has a story...",
