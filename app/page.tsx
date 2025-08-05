@@ -12,15 +12,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen">
       {/* Hero Section */}
-      <WhisperHero 
-        backgroundImage="/images/hero-whisper-moment.jpg"
-        backgroundVideo="/videos/memories-whisper.mp4"
-        tagline="Where memories become poetry"
-        heading="Before the moment fades into yesterday"
-        subheading="We'll capture the whispers between heartbeats, those fleeting seconds where your story breathes"
-        ctaText="Let's create together"
-        ctaLink="/connect"
-      />
+      <WhisperHero />
       
       {/* Brief Introduction */}
       <section className="w-full max-w-5xl px-6 py-16 mx-auto text-center">

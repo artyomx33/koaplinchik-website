@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion, Variants, Easing, cubicBezier } from "framer-motion";
+import { motion, Variants, cubicBezier } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import SignatureAnimation from "./SignatureAnimation";
 
 interface WhisperHeroProps {
   backgroundImage?: string;
@@ -16,12 +17,12 @@ interface WhisperHeroProps {
 }
 
 export default function WhisperHero({
-  backgroundImage = "/images/hero-whisper-moment.jpg",
+  backgroundImage = "/images/heroes/golden-hour-field.jpg",
   backgroundVideo = "/videos/memories-whisper.mp4",
   tagline = "Where memories become poetry",
-  heading = "Before the moment fades into yesterday",
+  heading = "Every heartbeat has a story...",
   subheading = "We'll capture the whispers between heartbeats, those fleeting seconds where your story breathes",
-  ctaText = "Let's create together",
+  ctaText = "Begin your memory",
   ctaLink = "/connect",
 }: WhisperHeroProps) {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -97,7 +98,7 @@ export default function WhisperHero({
       transition: { 
         duration: 0.8,
         ease: cubicBezier(0.4, 0, 0.2, 1),
-        delay: 0.4
+        delay: 5.5 // Appear after signature animation
       }
     },
     hover: { 
@@ -115,6 +116,19 @@ export default function WhisperHero({
       }
     }
   };
+
+  // Scroll hint (chevron) pulse after hero finishes
+  const hintVariants: Variants = {
+    hidden: { opacity: 0, y: 0 },
+    visible: {
+      opacity: 1,
+      y: [0, 10, 0],
+      transition: { delay: 6, repeat: Infinity, duration: 2 },
+    },
+  };
+
+  // Split heading into words for typing effect
+  const headingWords = heading.split(" ");
 
   return (
     <section 
@@ -153,7 +167,7 @@ export default function WhisperHero({
       </div>
       
       {/* Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/30"></div>
       
       {/* Content Container */}
       <motion.div 
@@ -170,13 +184,19 @@ export default function WhisperHero({
           {tagline}
         </motion.span>
         
-        {/* Main Heading - Pain */}
-        <motion.h1 
-          className="max-w-3xl mb-4 text-3xl font-light leading-tight md:text-5xl lg:text-6xl"
-          variants={itemVariants}
-        >
-          {heading}
-        </motion.h1>
+        {/* Main Heading - word-by-word typing */}
+        <h1 className="max-w-3xl mb-4 flex flex-wrap justify-center gap-x-2 text-3xl font-light leading-tight md:text-5xl lg:text-6xl">
+          {headingWords.map((word, idx) => (
+            <motion.span
+              key={word + idx}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2.5 + idx * 0.1 }} /* 2.5 s base */
+            >
+              {word}
+            </motion.span>
+          ))}
+        </h1>
         
         {/* Subheading - Remedy */}
         <motion.p 
@@ -186,6 +206,17 @@ export default function WhisperHero({
           {subheading}
         </motion.p>
         
+        {/* Animated signature (appears after words) */}
+        <SignatureAnimation 
+          width="240" 
+          height="auto" 
+          className="mb-6" 
+          color="white"
+          delay={4.5}
+          duration={1.5}
+          animate={inView}
+        />
+
         {/* CTA Button */}
         <motion.a
           href={ctaLink}
@@ -197,6 +228,26 @@ export default function WhisperHero({
         >
           {ctaText}
         </motion.a>
+      </motion.div>
+
+      {/* Scroll hint */}
+      <motion.div
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-white"
+        variants={hintVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        aria-hidden
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={1.5}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
       </motion.div>
     </section>
   );
