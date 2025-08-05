@@ -166,7 +166,7 @@ export default function StoriesPage() {
             caption="A winter wedding where warmth defied the cold"
             date="December 12, 2024"
             location="Stockholm, Sweden"
-            imageSrc="/images/placeholders/anna-mikael.jpg"
+            imageSrc="/images/placeholders/snow-kissed-hearts-anna-mikael-story.jpg"
             alt="Couple holding hands walking on snow with mountain sunlight behind them"
             slug="anna-mikael"
             testimonial="Koaplinchik didn't just capture our day, they captured our story. Every time we look at these photos, we feel the warmth despite the snow."
@@ -177,7 +177,7 @@ export default function StoriesPage() {
             caption="The kitchen where time stands still"
             date="September 8, 2024"
             location="Amsterdam, Netherlands"
-            imageSrc="/images/placeholders/three-generations.jpg"
+            imageSrc="/images/placeholders/kitchen-laughs-three-generations-memory.jpg"
             alt="Grandmother, mother, and child laughing while baking together"
             slug="three-generations"
             testimonial="I never knew how much I needed these memories until I saw them through your lens. My mother, my daughter, and me - three hearts beating as one."
@@ -188,7 +188,7 @@ export default function StoriesPage() {
             caption="The silent conversations before first words"
             date="July 23, 2024"
             location="Leiden, Netherlands"
-            imageSrc="/images/placeholders/before-dad.jpg"
+            imageSrc="/images/placeholders/silent-conversations-before-dad-moment.jpg"
             alt="Young father holding a baby with both laughing"
             slug="before-he-said-dad"
             testimonial="These photos captured something I didn't even realize was happening - the way he looked at me before he could even speak. I'll treasure this forever."
@@ -227,7 +227,7 @@ export default function StoriesPage() {
           >
             <div className="w-12 h-12 relative rounded-full overflow-hidden mr-4">
               <Image
-                src="/images/placeholders/testimonial-portrait.jpg"
+                src="/images/placeholders/grateful-hearts-testimonial-memory.jpg"
                 alt="Portrait of Emma & James"
                 fill
                 sizes="48px"

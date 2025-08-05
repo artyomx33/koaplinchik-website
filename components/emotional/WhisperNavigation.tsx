@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { usePathname } from "next/navigation";
-import SignatureAnimation from "./SignatureAnimation";
+import KoaplinchikLogo from "./KoaplinchikLogo";
 
 /**
  * WhisperNavigation - A soul-filled navigation that breathes with the scroll
@@ -114,12 +114,11 @@ export default function WhisperNavigation() {
             <div className="flex items-center justify-between max-w-7xl mx-auto">
               {/* Logo/Signature */}
               <Link href="/" className="relative z-10">
-                <SignatureAnimation 
+                <KoaplinchikLogo
                   width={120}
-                  height={40}
-                  color="white"
-                  animate={false}
                   className="transition-opacity duration-300 hover:opacity-80"
+                  theme="light"
+                  animate={false}
                   ariaLabel="Koaplinchik - Return to home"
                 />
               </Link>

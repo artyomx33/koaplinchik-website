@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, Variants, cubicBezier } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import SignatureAnimation from "./SignatureAnimation";
+import KoaplinchikLogo from "./KoaplinchikLogo";
 
 interface WhisperHeroProps {
   backgroundImage?: string;
@@ -17,7 +17,7 @@ interface WhisperHeroProps {
 }
 
 export default function WhisperHero({
-  backgroundImage = "/images/heroes/golden-hour-field.jpg",
+  backgroundImage = "/images/heroes/whisper-of-golden-moment.jpg",
   backgroundVideo = "/videos/memories-whisper.mp4",
   tagline = "Where memories become poetry",
   heading = "Every heartbeat has a story...",
@@ -206,15 +206,13 @@ export default function WhisperHero({
           {subheading}
         </motion.p>
         
-        {/* Animated signature (appears after words) */}
-        <SignatureAnimation 
-          width="240" 
-          height="auto" 
-          className="mb-6" 
-          color="white"
+        {/* Signature logo – gentle fade-in */}
+        <KoaplinchikLogo
+          width={240}
+          className="mb-6"
           delay={4.5}
-          duration={1.5}
           animate={inView}
+          theme="light"
         />
 
         {/* CTA Button */}

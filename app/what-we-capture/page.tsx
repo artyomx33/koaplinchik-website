@@ -139,7 +139,7 @@ export default function WhatWeCapturePage() {
             description="The tender beginnings, tiny fingers, and first breaths"
             painPoint="They grow so quickly, those first precious days blur into memory."
             remedy="We slow time down, capturing each tiny detail before they change."
-            imageSrc="/images/placeholders/newborn.jpg"
+            imageSrc="/images/placeholders/tiny-heartbeat-newborn-memory.jpg"
             alt="Newborn baby's hand gently held by parent"
             href="/what-we-capture/newborn"
           />
@@ -149,7 +149,7 @@ export default function WhatWeCapturePage() {
             description="Family moments that capture both the mess and the magic"
             painPoint="Daily life rushes by in a blur of routines and responsibilities."
             remedy="We find beauty in your beautiful chaos, preserving the laughter between the busy."
-            imageSrc="/images/placeholders/family.jpg"
+            imageSrc="/images/placeholders/chaotic-love-family-story.jpg"
             alt="Family laughing together in natural, candid moment"
             href="/what-we-capture/family"
           />
@@ -159,7 +159,7 @@ export default function WhatWeCapturePage() {
             description="Wedding and couple photography that feels like your love story"
             painPoint="The day you've dreamed of passes in a heartbeat, often too quick to savor."
             remedy="We capture not just how it looked, but how it felt to promise forever."
-            imageSrc="/images/placeholders/couple.jpg"
+            imageSrc="/images/placeholders/forever-whisper-couple-dream.jpg"
             alt="Couple sharing an intimate moment together"
             href="/what-we-capture/couple"
           />
@@ -169,7 +169,7 @@ export default function WhatWeCapturePage() {
             description="Individual portraits that reveal your inner light"
             painPoint="We rarely see ourselves as others do, the beauty in our own story."
             remedy="We create a mirror that reflects not just your image, but your essence."
-            imageSrc="/images/placeholders/portrait.jpg"
+            imageSrc="/images/placeholders/soul-mirror-portrait-moment.jpg"
             alt="Emotional portrait in natural light"
             href="/what-we-capture/portrait"
           />
