@@ -98,8 +98,22 @@ export default function WhatWeCapturePage() {
   return (
     <main className="flex flex-col items-center min-h-screen">
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-black/90 to-black/70 text-white py-32 px-6">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="relative w-full h-[70vh] text-white flex items-end">
+        {/* Background image */}
+        <Image
+          src="/images/heroes/what we capture hero.webp"
+          alt="Dramatic collage of captured moments"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        {/* Gradient overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/90" />
+
+        {/* Hero copy */}
+        <div className="relative z-10 w-full px-6 pb-20">
+          <div className="max-w-5xl mx-auto text-center">
           <WhisperText 
             as="h1" 
             size="xl" 
@@ -122,6 +136,7 @@ export default function WhatWeCapturePage() {
           >
             Choose your journey below
           </HeartText>
+        </div>
         </div>
       </section>
       
@@ -169,7 +184,7 @@ export default function WhatWeCapturePage() {
             description="Individual portraits that reveal your inner light"
             painPoint="We rarely see ourselves as others do, the beauty in our own story."
             remedy="We create a mirror that reflects not just your image, but your essence."
-            imageSrc="/images/placeholders/soul-mirror-portrait-moment.webp"
+            imageSrc="/images/placeholders/soul-mirror-portrait-moment.JPG"
             alt="Emotional portrait in natural light"
             href="/what-we-capture/portrait"
           />

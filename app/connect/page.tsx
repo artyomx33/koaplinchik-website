@@ -139,9 +139,23 @@ const ContactItem = ({
 export default function ConnectPage() {
   return (
     <main className="flex flex-col items-center min-h-screen">
-      {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-black/90 to-black/70 text-white py-32 px-6">
-        <div className="max-w-5xl mx-auto text-center">
+      {/* Hero Section with dramatic image */}
+      <section className="relative w-full h-[70vh] text-white flex items-end">
+        {/* Background Image */}
+        <Image
+          src="/images/heroes/connect hero.png"
+          alt="Couple connecting with photographer"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        {/* Gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/90" />
+
+        {/* Hero Copy */}
+        <div className="relative z-10 w-full px-6 pb-20">
+          <div className="max-w-5xl mx-auto text-center">
           <WhisperText 
             as="h1" 
             size="xl" 
@@ -167,6 +181,7 @@ export default function ConnectPage() {
           >
             Choose how you'd like to connect
           </HeartText>
+        </div>
         </div>
       </section>
       

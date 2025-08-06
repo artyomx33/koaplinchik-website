@@ -177,36 +177,36 @@ export default function StoriesPage() {
           viewport={{ once: true, amount: 0.1 }}
         >
           <StoryCard
-            title="Anna & Mikael: The Snow Kissed Sun"
-            caption="A winter wedding where warmth defied the cold"
+            title="Landscape of Forever"
+            caption="Hand-in-hand on the edge of the world"
             date="December 12, 2024"
-            location="Stockholm, Sweden"
-            imageSrc="/images/placeholders/snow-kissed-hearts-anna-mikael-story.jpg"
-            alt="Couple holding hands walking on snow with mountain sunlight behind them"
-            slug="anna-mikael"
-            testimonial="Koaplinchik didn't just capture our day, they captured our story. Every time we look at these photos, we feel the warmth despite the snow."
+            location="Cappadocia, Turkey"
+            imageSrc="/images/placeholders/landscape artem holding niki hand.JPG"
+            alt="Niki & Artem holding hands on a sun-kissed cliff at dawn"
+            slug="landscape-of-forever"
+            testimonial="The vastness around us melted away when we saw how you framed that moment. Our love now looks as big as it feels."
           />
           
           <StoryCard
-            title="Three Generations, One Laugh"
-            caption="The kitchen where time stands still"
+            title="Desert Whispers"
+            caption="A Dubai breeze tangled with laughter"
             date="September 8, 2024"
-            location="Amsterdam, Netherlands"
-            imageSrc="/images/placeholders/kitchen-laughs-three-generations-memory.jpg"
-            alt="Grandmother, mother, and child laughing while baking together"
-            slug="three-generations"
-            testimonial="I never knew how much I needed these memories until I saw them through your lens. My mother, my daughter, and me - three hearts beating as one."
+            location="Dubai, UAE"
+            imageSrc="/images/placeholders/dubai couple niki artem.jpg"
+            alt="Niki & Artem sharing a quiet laugh with desert horses in the background"
+            slug="desert-whispers"
+            testimonial="The desert felt endless until you framed our small, intimate moment in it. Now the memory feels eternal."
           />
           
           <StoryCard
-            title="Before He Said 'Dad'"
-            caption="The silent conversations before first words"
+            title="Petals & Promises"
+            caption="Love distilled to a brush of fingertips"
             date="July 23, 2024"
             location="Leiden, Netherlands"
-            imageSrc="/images/placeholders/silent-conversations-before-dad-moment.jpg"
-            alt="Young father holding a baby with both laughing"
-            slug="before-he-said-dad"
-            testimonial="These photos captured something I didn't even realize was happening - the way he looked at me before he could even speak. I'll treasure this forever."
+            imageSrc="/images/placeholders/flower niki artem hand.JPG"
+            alt="Close-up of intertwined hands holding a single flower petal"
+            slug="petals-and-promises"
+            testimonial="We never realized how much a single touch could say until you photographed it — now that whisper is louder than words."
           />
         </motion.div>
       </section>

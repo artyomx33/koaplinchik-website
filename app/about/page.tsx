@@ -34,10 +34,10 @@ export default function AboutPage() {
           </WhisperText>
           
           <StoryText 
-            className="max-w-2xl mx-auto mb-8 opacity-90"
+            className="max-w-2xl mx-auto mb-8 text-gray-100 opacity-95"
           >
-            Behind every photograph is a philosophy — a belief that moments deserve to be 
-            preserved not just as they appeared, but as they were felt.
+            We don’t take photos. <br className="hidden md:inline" />
+            We pause time and send it back as a love letter.
           </StoryText>
         </div>
         </div>
@@ -70,7 +70,7 @@ export default function AboutPage() {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Niki & Artem Photo 1 */}
             <motion.div
-              className="relative flex-1 aspect-[4/3] overflow-hidden rounded-lg shadow-lg"
+              className="relative flex-1 aspect-[4/3] overflow-hidden rounded-lg shadow-lg border-4 border-white"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -88,35 +88,39 @@ export default function AboutPage() {
 
             {/* Copy */}
             <div className="flex-1">
-              <StoryText className="mb-6 opacity-90">
-                We are <strong>Niki</strong> &amp; <strong>Artem</strong>, the souls breathing life into Koaplinchik. 
-                Our journey began with a single click – not of the shutter, but of two hearts 
-                recognising the poetry in each other&rsquo;s gaze.
+              <StoryText className="mb-6 text-gray-800 dark:text-gray-200 leading-relaxed">
+                We are <strong>Niki</strong> &amp; <strong>Artem</strong> — the souls behind Koaplinchik.
+                Our story didn’t begin with a business plan. It began with a kiss, a laugh,
+                and the kind of look that says, <em>“I see you.”</em>
+                <br /><br />
+                That’s what we chase through every lens: the look that matters. The quiet
+                breath before a vow. The fingertip that brushes a cheek. The last moment
+                before everything changes.
+                <br /><br />
+                We’ve shot memories in storm-light, in candle-light, in the kind of light that
+                only exists when someone’s falling in love.
+                <br /><br />
+                We don’t offer photography. <br className="hidden md:inline" />
+                We offer remembrance — shaped by instinct, trust, and a little bit of magic.
               </StoryText>
 
-              <StoryText className="mb-6 opacity-90">
-                From windswept coasts to quiet kitchen mornings, we chase the fleeting seconds 
-                where love whispers its truest form. Our cameras are merely pens; light, our ink; 
-                your emotions, the story we are humbled to write.
-              </StoryText>
-
-              <MemoryText className="italic mb-8">
+              <MemoryText className="italic mb-8 text-gray-800 dark:text-gray-200">
                 “Every photograph is a love letter we send back to the moment it was born.”
               </MemoryText>
 
               <div className="flex gap-4">
                 <Link 
-                  href="/what-we-capture" 
+                  href="/stories" 
                   className="px-8 py-3 text-sm font-medium tracking-wide transition-colors border border-current rounded-full md:text-base hover:bg-black/5 dark:hover:bg-white/5"
                 >
-                  Explore Our Work
+                  Explore the Stories
                 </Link>
                 
                 <Link 
                   href="/connect" 
-                  className="px-8 py-3 text-sm font-medium tracking-wide transition-colors rounded-full md:text-base hover:underline"
+                  className="px-8 py-3 text-sm font-medium tracking-wide transition-all rounded-full md:text-base border border-current hover:bg-black/90 hover:text-white dark:hover:bg-white dark:hover:text-black"
                 >
-                  Begin a Conversation
+                  Start a Conversation
                 </Link>
               </div>
             </div>
