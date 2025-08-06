@@ -99,18 +99,16 @@ export default function WhisperNavigation() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <AnimatePresence>
-        {/* Only show navigation after scrolling or when mobile menu is open */}
-        {(isScrolled || isSoulOpen) && (
-          <motion.nav
-            className={`w-full py-4 px-6 ${
-              isScrolled ? "bg-black/30 backdrop-blur-md" : "bg-transparent"
-            } transition-colors duration-500`}
-            variants={navVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
+      <motion.nav
+        className={`w-full py-4 px-6 ${
+          isScrolled
+            ? "bg-black/30 backdrop-blur-md"
+            : "bg-black/10 backdrop-blur-sm"
+        } transition-colors duration-500`}
+        variants={navVariants}
+        initial="hidden"
+        animate="visible"
+      >
             <div className="flex items-center justify-between max-w-7xl mx-auto">
               {/* Logo/Signature */}
               <Link href="/" className="relative z-10">
@@ -217,9 +215,7 @@ export default function WhisperNavigation() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+      </motion.nav>
     </header>
   );
 }
