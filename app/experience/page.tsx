@@ -36,7 +36,7 @@ export default function ExperiencePage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-          className="max-w-3xl w-full p-12 bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-lg shadow-lg text-center"
+          className="max-w-3xl w-full p-12 bg-black/90 text-white backdrop-blur-xl rounded-lg shadow-2xl border border-white/20 text-center"
         >
           <WhisperText
             as="h2"
@@ -58,13 +58,13 @@ export default function ExperiencePage() {
             {/* Placeholder action – replace with real form/modal later */}
             <a
               href="#notify"
-              className="px-8 py-3 text-sm font-medium tracking-wide rounded-full bg-black text-white dark:bg-white dark:text-black transition-colors hover:bg-black/90 dark:hover:bg-white/90"
+              className="px-8 py-3 text-sm font-medium tracking-wide rounded-full bg-white text-black transition-colors hover:bg-white/90"
             >
               Notify Me When It’s Live
             </a>
             <Link
               href="/connect"
-              className="px-8 py-3 text-sm font-medium tracking-wide rounded-full border border-black dark:border-white text-black dark:text-white transition-colors hover:bg-black/5 dark:hover:bg-white/10"
+              className="px-8 py-3 text-sm font-medium tracking-wide rounded-full border border-white text-white transition-colors hover:bg-white/10"
             >
               Connect with Us
             </Link>
