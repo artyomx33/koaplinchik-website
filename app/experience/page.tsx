@@ -29,73 +29,47 @@ export default function ExperiencePage() {
         </div>
       </section>
       
-      {/* Coming Soon Section */}
-      <section className="w-full max-w-5xl px-6 py-20 mx-auto text-center">
+      {/* Invitation Section */}
+      <section className="w-full px-6 py-20 mx-auto flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
-          className="relative p-10 border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+          className="max-w-3xl w-full p-12 bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-lg shadow-lg text-center"
         >
-          {/* Subtle background pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/20" />
-            <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-heart)_1px,_transparent_1px)] bg-[size:20px_20px]"></div>
-          </div>
-          
-          <div className="relative">
-            <HeartText
-              as="span"
-              size="sm"
-              className="inline-block mb-4 px-4 py-1 bg-black/5 dark:bg-white/5 rounded-full"
+          <WhisperText
+            as="h2"
+            size="lg"
+            className="mb-6"
+          >
+            We're creating something special — just for you.
+          </WhisperText>
+
+          <StoryText className="text-lg mb-8 leading-relaxed">
+            Some things can’t be rushed. We’re designing a photography experience
+            that feels like poetry — quiet, meaningful, timeless.
+            <strong className="block mt-4">
+              Want to be the first to feel it?
+            </strong>
+          </StoryText>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* Placeholder action – replace with real form/modal later */}
+            <a
+              href="#notify"
+              className="px-8 py-3 text-sm font-medium tracking-wide rounded-full bg-black text-white dark:bg-white dark:text-black transition-colors hover:bg-black/90 dark:hover:bg-white/90"
             >
-              Coming Soon
-            </HeartText>
-            
-            <WhisperText 
-              as="h2" 
-              size="lg" 
-              className="mb-6"
+              Notify Me When It’s Live
+            </a>
+            <Link
+              href="/connect"
+              className="px-8 py-3 text-sm font-medium tracking-wide rounded-full border border-black dark:border-white text-black dark:text-white transition-colors hover:bg-black/5 dark:hover:bg-white/10"
             >
-              We're crafting something beautiful
-            </WhisperText>
-            
-            <StoryText 
-              className="max-w-2xl mx-auto mb-10 opacity-80"
-            >
-              Most people rush to show unfinished work, sacrificing soul for speed.
-              <strong className="font-medium block mt-2">
-                We're taking our time to create an experience worthy of your memories.
-              </strong>
-            </StoryText>
-            
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-8">
-              <Link 
-                href="/what-we-capture" 
-                className="px-8 py-3 text-sm font-medium tracking-wide transition-colors border border-current rounded-full md:text-base hover:bg-black/5 dark:hover:bg-white/5"
-              >
-                Explore What We Capture
-              </Link>
-              
-              <Link 
-                href="/connect" 
-                className="px-8 py-3 text-sm font-medium tracking-wide transition-colors rounded-full md:text-base hover:underline"
-              >
-                Connect with us now
-              </Link>
-            </div>
+              Connect with Us
+            </Link>
           </div>
         </motion.div>
-        
-        {/* Subtle countdown */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="mt-10 text-sm italic"
-        >
-          The full experience unveils in autumn 2025
-        </motion.p>
       </section>
     </main>
   );
