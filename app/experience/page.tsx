@@ -10,22 +10,38 @@ export default function ExperiencePage() {
   return (
     <main className="flex flex-col items-center min-h-screen">
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-black/90 to-black/70 text-white py-32 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <WhisperText 
-            as="h1" 
-            size="xl" 
-            className="mb-6"
-          >
-            The Experience
-          </WhisperText>
-          
-          <StoryText 
-            className="max-w-2xl mx-auto mb-8 opacity-90"
-          >
-            We don't just take photos. We create an experience where time slows down, 
-            where you can breathe, and where memories crystallize into something tangible.
-          </StoryText>
+      <section className="relative w-full h-[70vh] text-white flex items-end">
+        {/* Background Image */}
+        <Image
+          src="/images/heroes/experiences hero.png"
+          alt="Couple enjoying an emotional photography experience"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+
+        {/* Gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/90" />
+
+        {/* Content */}
+        <div className="relative z-10 w-full px-6 pb-20 text-center">
+          <div className="max-w-5xl mx-auto">
+            <WhisperText 
+              as="h1" 
+              size="xl" 
+              className="mb-6"
+            >
+              The Experience
+            </WhisperText>
+            
+            <StoryText 
+              className="max-w-2xl mx-auto mb-8 opacity-90"
+            >
+              We don't just take photos. We create an experience where time slows down, 
+              where you can breathe, and where memories crystallize into something tangible.
+            </StoryText>
+          </div>
         </div>
       </section>
       

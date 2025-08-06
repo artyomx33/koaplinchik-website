@@ -9,9 +9,22 @@ import Link from "next/link";
 export default function AboutPage() {
   return (
     <main className="flex flex-col items-center min-h-screen">
-      {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-black/90 to-black/70 text-white py-32 px-6">
-        <div className="max-w-5xl mx-auto text-center">
+      {/* Hero Section – romantic Niki & Artem image */}
+      <section className="relative w-full h-[70vh] text-white flex items-end">
+        {/* Background image */}
+        <Image
+          src="/images/heroes/niki kissing artem.webp"
+          alt="Niki kissing Artem — souls-kissing-eternal-moment"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/90" />
+
+        <div className="relative z-10 w-full px-6 pb-24">
+          <div className="max-w-5xl mx-auto text-center">
           <WhisperText 
             as="h1" 
             size="xl" 
@@ -26,6 +39,7 @@ export default function AboutPage() {
             Behind every photograph is a philosophy — a belief that moments deserve to be 
             preserved not just as they appeared, but as they were felt.
           </StoryText>
+        </div>
         </div>
       </section>
       
@@ -108,23 +122,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Second Photo */}
-          <motion.div
-            className="relative mt-20 w-full h-[60vh] overflow-hidden rounded-lg shadow-lg"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-          >
-            <Image
-              src="/images/placeholders/niki kissing artem.webp"
-              alt="Niki kissing Artem – souls-kissing-eternal-moment"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          </motion.div>
         </motion.div>
       </section>
     </main>

@@ -38,7 +38,7 @@ export default function PortraitPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/placeholders/soul-mirror-portrait-moment.webp"
+            src="/images/placeholders/soul-mirror-portrait-moment.png"
             alt="Emotional portrait in natural light"
             fill
             priority
