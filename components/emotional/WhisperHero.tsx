@@ -18,7 +18,7 @@ interface WhisperHeroProps {
 
 export default function WhisperHero({
   backgroundImage = "/images/heroes/whisper-of-golden-moment.webp",
-  backgroundVideo = "/videos/memories-whisper.mp4",
+  backgroundVideo = "/images/heroes/main page hero video.mp4",
   tagline = "Where memories become poetry",
   heading = "Every heartbeat has a story...",
   subheading = "We'll capture the whispers between heartbeats, those fleeting seconds where your story breathes",
@@ -26,6 +26,7 @@ export default function WhisperHero({
   ctaLink = "/connect",
 }: WhisperHeroProps) {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const { ref: heroRef, inView } = useInView({
     threshold: 0.2,
@@ -38,18 +39,31 @@ export default function WhisperHero({
       const video = videoRef.current;
       
       const handleCanPlay = () => {
-        setVideoLoaded(true);
+        // Small delay to ensure smooth transition
+        setTimeout(() => {
+          setVideoLoaded(true);
+        }, 300);
+      };
+      
+      const handleError = () => {
+        console.error("Video failed to load");
+        setVideoError(true);
       };
       
       video.addEventListener("canplay", handleCanPlay);
+      video.addEventListener("error", handleError);
       
       // If video is already loaded
       if (video.readyState >= 3) {
-        setVideoLoaded(true);
+        handleCanPlay();
       }
+      
+      // Load the video
+      video.load();
       
       return () => {
         video.removeEventListener("canplay", handleCanPlay);
+        video.removeEventListener("error", handleError);
       };
     }
   }, []);
@@ -136,7 +150,7 @@ export default function WhisperHero({
       aria-label="Hero section"
       ref={heroRef}
     >
-      {/* Background Image (fallback) */}
+      {/* Background Image (loads immediately) */}
       <div className="absolute inset-0 w-full h-full">
         <Image
           src={backgroundImage}
@@ -144,13 +158,13 @@ export default function WhisperHero({
           fill
           priority
           sizes="100vw"
-          className={`object-cover transition-opacity duration-1000 ${
-            videoLoaded ? "opacity-0" : "opacity-100"
+          className={`object-cover transition-opacity duration-1500 ${
+            videoLoaded && !videoError ? "opacity-0" : "opacity-100"
           }`}
         />
       </div>
       
-      {/* Background Video */}
+      {/* Background Video (lazy loads) */}
       <div className="absolute inset-0 w-full h-full">
         <video
           ref={videoRef}
@@ -158,11 +172,13 @@ export default function WhisperHero({
           muted
           loop
           playsInline
-          className={`object-cover w-full h-full transition-opacity duration-1000 ${
-            videoLoaded ? "opacity-100" : "opacity-0"
+          preload="auto"
+          className={`object-cover w-full h-full transition-opacity duration-1500 ${
+            videoLoaded && !videoError ? "opacity-100" : "opacity-0"
           }`}
         >
           <source src={backgroundVideo} type="video/mp4" />
+          {/* Fallback to image handled by keeping image visible if video errors */}
         </video>
       </div>
       
